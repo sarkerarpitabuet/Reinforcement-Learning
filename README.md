@@ -104,7 +104,7 @@ The performance comparison focuses on:
 
 The objective is to evaluate whether reinforcement learning-based traffic signal control can improve traffic conditions compared with conventional fixed-time signal operation.
 
-Q-Learning:
+### Q-Learning:
 Q-Learning is a reinforcement-learning method that learns through interaction with the simulation. At each decision point,
 the agent observes the traffic state, selects an action (for example, extend the current green or switch to another phase),and receives a reward based on traffic conditions. Over repeated experiences, it learns which actions tend to produce
 better outcomes.
@@ -175,7 +175,7 @@ DQN also uses **Experience Replay** and a **Target Network** to improve training
 
 
 
-Cumulative Reward and Queue Length Comparison of Fixed-Time, Q-Learning, and Deep Q-Learning:
+### Cumulative Reward and Queue Length Comparison of Fixed-Time, Q-Learning, and Deep Q-Learning:
 
 ### Fixed-Time Signal Control
 ![Fixed-Time Signal Control](./Fixed%20Signal.PNG)
