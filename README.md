@@ -35,7 +35,51 @@ The Q-Learning algorithm updates the Q-value using the following equation:
 
 ### Explanation
 
-The Q-Learning algorithm updates its current Q-value based on the immediate reward and the maximum expected future reward. Through repeated interactions with the environment, the agent learns which actions provide the highest cumulative reward.
+The Q-Learning algorithm updates its current Q-value based on the immediate reward and the maximum expected future reward. Through repeated interactions with the environment, the agent learns which actions provide the highest cumulative reward. 
+
+## Deep Q-Learning (DQN)
+
+Deep Q-Learning (DQN) is a reinforcement learning method that combines Q-Learning with a deep neural network. Instead of storing Q-values in a lookup table, DQN uses a neural network to estimate the value of each available action based on the current traffic state.
+
+At each decision point, the agent observes the traffic conditions, selects an action (for example, extending the current green phase or switching to another phase), and receives a reward based on traffic conditions. Through repeated interactions with the simulation, the neural network learns which actions tend to produce better outcomes.
+
+### 1. DQN Target Value
+
+The DQN algorithm calculates the target Q-value using the following equation:
+
+$$
+y = r + \gamma \max_{a'} Q_{\text{target}}(s',a')
+$$
+
+### 2. DQN Loss Function
+
+The neural network is trained by minimizing the squared difference between the target Q-value and the Q-value predicted by the online network.
+
+$$
+\text{Loss} = \left[y-Q_{\text{online}}(s,a)\right]^2
+$$
+
+### 3. Parameters
+
+* **Q_online(s, a):** Q-value predicted by the online neural network currently being trained.
+* **Q_target(s', a'):** Q-value predicted by the target network for the next state.
+* **r:** Immediate reward received after taking the action.
+* **γ (Gamma):** Discount factor; determines the importance of future rewards.
+* **s':** Next state observed after taking the action.
+* **a':** Possible action in the next state.
+* **y:** Target Q-value calculated using the immediate reward and estimated future reward.
+* **Loss:** Measures the difference between the predicted Q-value and the target Q-value.
+
+### 4. Explanation
+
+Unlike traditional Q-Learning, which stores Q-values in a table, DQN uses a neural network to estimate Q-values for different traffic signal control actions.
+
+The network takes traffic conditions, such as queue lengths, vehicle counts, waiting times, and the current signal phase, as inputs and predicts Q-values for available actions.
+
+Through repeated interactions with the traffic simulation, the agent gradually learns which signal control actions maximize cumulative rewards and improve traffic conditions.
+
+DQN also uses **Experience Replay** and a **Target Network** to improve training stability.
+
 
 
 Cumulative Reward and Queue Length Comparison of Fixed-Time, Q-Learning, and Deep Q-Learning:
