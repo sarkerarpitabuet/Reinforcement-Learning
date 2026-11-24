@@ -1,5 +1,5 @@
-# Reinforcement-learning
-Developing Q-Learning and Deep Q-Learning Algorithms for Traffic Signal Control and compare results with Fixed Traffic Signal
+# Reinforcement-Learning
+Developing Q-Learning and Deep Q-Learning Algorithms for Traffic Signal Control and compare results with Fixed Traffic Signal using SUMO and Python
 # Study Area
 A random intersection
 # Data Collection and Analysis
