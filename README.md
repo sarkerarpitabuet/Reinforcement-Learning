@@ -116,6 +116,7 @@ The Q-Learning algorithm updates the Q-value using the following equation:
 <p align="center">
   <img src="https://latex.codecogs.com/svg.image?Q(s,a)%20%5Cleftarrow%20Q(s,a)%20%2B%20%5Calpha%20%5Cleft%5Br%20%2B%20%5Cgamma%20%5Cmax_%7Ba'%7D%20Q(s',a')%20-%20Q(s,a)%20%5Cright%5D" />
 </p>
+
 ### Parameters
 
 - **Q(s, a):** Current estimated value of taking action `a` in state `s`.
